@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detective Cape | Premium Minecraft Capes Store</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            purple: '#6d28d9',
+                            darkPurple: '#2e1065',
+                            neonRed: '#ff2a5f',
+                            gold: '#f59e0b',
+                            darkBg: '#0b0914',
+                            cardBg: '#131024',
+                            cardBorder: '#292246'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            background-color: #0b0914;
+            color: #f3f4f6;
+            font-family: 'Inter', sans-serif;
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(109, 40, 217, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 85% 80%, rgba(255, 42, 95, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.05) 0%, transparent 60%);
+            background-attachment: fixed;
+        }
+
+        .pixel-font {
+            font-family: 'Press Start 2P', monospace;
+        }
+
+        .glow-effect {
+            box-shadow: 0 0 20px rgba(109, 40, 217, 0.4);
+        }
+
+        .glow-effect-red {
+            box-shadow: 0 0 20px rgba(255, 42, 95, 0.4);
+        }
+
+        .glow-effect-gold {
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+        }
+
+        /* Minecraft Redstone Block Icon Pulse */
+        .redstone-pulse {
+            animation: pulse-red 2s infinite alternate;
+        }
+
+        @keyframes pulse-red {
+            0% { filter: drop-shadow(0 0 2px #ff2a5f); }
+            100% { filter: drop-shadow(0 0 8px #ff2a5f); }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0914;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #292246;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6d28d9;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-brand-neonRed selection:text-white">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-gradient-to-r from-brand-darkPurple via-brand-purple to-brand-neonRed p-2 text-center text-xs sm:text-sm font-semibold tracking-wide flex items-center justify-center gap-2 shadow-lg">
+        <span class="bg-brand-gold text-black px-2 py-0.5 rounded text-xs font-bold uppercase">PROMO ON</span>
+        <span>🔥 Limited Time Offers active on select Minecraft Capes! Join Discord to claim.</span>
+    </div>
+
+    <!-- MAIN NAVBAR -->
+    <header class="sticky top-0 z-40 backdrop-blur-md bg-brand-darkBg/80 border-b border-brand-cardBorder px-4 sm:px-8 py-4">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            
+            <!-- Logo & Title -->
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-600 to-brand-neonRed p-0.5 shadow-lg glow-effect">
+                    <div class="w-full h-full bg-brand-cardBg rounded-[10px] flex items-center justify-center">
+                        <i class="fa-solid font-bold fa-user-secret text-2xl text-brand-gold"></i>
+                    </div>
+                </div>
+                <div>
+                    <h1 class="text-xl sm:text-2xl font-extrabold tracking-tight text-white flex items-center gap-2">
+                        DETECTIVE CAPE
+                        <span class="text-xs font-mono bg-brand-purple/40 text-purple-300 border border-purple-500/30 px-2 py-0.5 rounded-full">v2.0</span>
+                    </h1>
+                    <p class="text-xs text-gray-400">Official Branch of <span class="text-brand-gold font-semibold">Detective Shop</span></p>
+                </div>
+            </div>
+
+            <!-- Quick Action Links -->
+            <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+                <a id="principalDiscordBtn" href="https://discord.gg/gyr2mZ9DX" target="_blank" rel="noopener noreferrer" 
+                   class="flex items-center gap-2 px-3 py-2 text-xs sm:text-sm bg-indigo-600/20 hover:bg-indigo-600/40 text-indigo-300 border border-indigo-500/40 rounded-xl transition-all duration-200">
+                    <i class="fa-brands fa-discord text-base"></i>
+                    <span>Principal Discord</span>
+                </a>
+                <a id="navNotificationLink" href="https://discord.com/channels/1537231983007109131/153723199406315942" target="_blank" rel="noopener noreferrer" 
+                   class="flex items-center gap-2 px-3 py-2 text-xs sm:text-sm bg-brand-purple/20 hover:bg-brand-purple/40 text-purple-300 border border-brand-purple/40 rounded-xl transition-all duration-200">
+                    <i class="fa-solid fa-bell text-xs"></i>
+                    <span>Notifications</span>
+                </a>
+                <a id="navBuyLink" href="https://discord.com/channels/1537231983007109131/1546155929274421400" target="_blank" rel="noopener noreferrer" 
+                   class="flex items-center gap-2 px-4 py-2 text-xs sm:text-sm bg-gradient-to-r from-brand-neonRed to-red-600 hover:from-red-500 hover:to-brand-neonRed text-white font-bold rounded-xl shadow-lg glow-effect-red transition-all duration-200">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>Buy Channel</span>
+                </a>
+                <!-- Admin Lock Toggle Button -->
+                <button onclick="handleAdminAuth()" class="p-2 text-gray-400 hover:text-brand-gold border border-brand-cardBorder hover:border-brand-gold/50 rounded-xl bg-brand-cardBg transition-all" title="Admin Panel">
+                    <i class="fa-solid fa-lock text-sm"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENT CONTAINER -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-8 py-8 w-full flex-grow space-y-10">
+
+        <!-- HERO & OWNER SECTION -->
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
+            
+            <!-- Hero Announcement Banner -->
+            <div class="lg:col-span-2 bg-gradient-to-br from-brand-cardBg to-brand-darkBg border border-brand-cardBorder rounded-2xl p-6 sm:p-8 relative overflow-hidden flex flex-col justify-between shadow-2xl">
+                <div class="absolute -right-10 -bottom-10 opacity-10 pointer-events-none">
+                    <i class="fa-solid fa-shield-halved text-[220px] text-brand-purple"></i>
+                </div>
+                <div class="space-y-4 max-w-xl z-10">
+                    <div class="inline-flex items-center gap-2 bg-brand-purple/30 border border-brand-purple/50 px-3 py-1 rounded-full text-xs font-semibold text-purple-200">
+                        <i class="fa-solid fa-cubes text-brand-gold"></i> Premium Minecraft Capes
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
+                        Elevate Your Minecraft Style with <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-gold via-purple-400 to-brand-neonRed">Detective Capes</span>
+                    </h2>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Exclusive Minecraft capes catalog. Trade seamlessly using Redstone Block Stacks in-game or via direct Discord tickets!
+                    </p>
+                </div>
+
+                <div class="pt-6 z-10 flex flex-wrap items-center gap-4 border-t border-brand-cardBorder/60 mt-6">
+                    <div class="flex items-center gap-2 text-xs text-gray-400">
+                        <i class="fa-solid fa-square-check text-green-400"></i> Verified Branch of Detective Shop
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-gray-400">
+                        <i class="fa-solid fa-bolt text-brand-gold"></i> Fast Discord Ticket Service
+                    </div>
+                </div>
+            </div>
+
+            <!-- Owner Profile Card -->
+            <div class="bg-brand-cardBg border border-brand-cardBorder rounded-2xl p-6 relative flex flex-col items-center justify-between text-center shadow-xl hover:border-brand-purple/50 transition-all">
+                <div class="absolute top-4 right-4">
+                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold bg-green-500/10 text-green-400 border border-green-500/20">
+                        <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-ping"></span>
+                        ONLINE OWNER
+                    </span>
+                </div>
+
+                <div class="w-full flex flex-col items-center pt-2">
+                    <!-- Avatar representation: Smoking Detective Graphic -->
+                    <div class="relative group mb-4">
+                        <div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-brand-gold via-brand-purple to-brand-neonRed p-1 shadow-lg glow-effect-gold">
+                            <svg class="w-full h-full rounded-xl bg-slate-950 p-1" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="100" height="100" rx="12" fill="#090514"/>
+                                <!-- Detective Fedora Cap -->
+                                <path d="M20 35 L80 35 L75 20 L25 20 Z" fill="#2d1b4e"/>
+                                <rect x="15" y="35" width="70" height="6" fill="#6d28d9"/>
+                                <!-- Head & Face -->
+                                <rect x="30" y="41" width="40" height="35" fill="#e2b897"/>
+                                <!-- Sunglasses -->
+                                <rect x="32" y="48" width="36" height="12" fill="#111827"/>
+                                <rect x="35" y="50" width="10" height="4" fill="#38bdf8" opacity="0.6"/>
+                                <!-- Smoking Cigar Effect -->
+                                <rect x="58" y="66" width="16" height="4" fill="#78350f" transform="rotate(-10 58 66)"/>
+                                <rect x="72" y="63" width="4" height="4" fill="#ef4444" class="animate-pulse"/>
+                                <!-- Rising Smoke -->
+                                <circle cx="78" cy="58" r="3" fill="#9ca3af" opacity="0.6"/>
+                                <circle cx="84" cy="50" r="4" fill="#d1d5db" opacity="0.4"/>
+                                <circle cx="89" cy="40" r="5" fill="#f3f4f6" opacity="0.2"/>
+                                <!-- Coat Collar -->
+                                <path d="M25 76 L75 76 L85 100 L15 100 Z" fill="#1e1b4b"/>
+                                <path d="M42 76 L50 90 L58 76 Z" fill="#b45309"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                        Detectiivve
+                        <i class="fa-solid fa-shield-cat text-brand-gold text-sm" title="Store Owner"></i>
+                    </h3>
+                    <p class="text-xs text-brand-gold font-mono mt-0.5">Owner of Detective Shop & Capes</p>
+                    
+                    <p class="text-xs text-gray-400 mt-3 italic px-2">
+                        "Offering premium capes and rapid service for the Minecraft community."
+                    </p>
+                </div>
+
+                <div class="w-full pt-4 mt-4 border-t border-brand-cardBorder/60">
+                    <a href="https://discord.gg/gyr2mZ9DX" target="_blank" rel="noopener noreferrer"
+                       class="w-full flex items-center justify-center gap-2 py-2 px-3 text-xs font-semibold bg-brand-purple/20 hover:bg-brand-purple/40 text-purple-200 border border-brand-purple/40 rounded-xl transition-all">
+                        <i class="fa-brands fa-discord"></i> Join Principal Discord
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CAPES CATALOG SECTION -->
+        <section class="space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-brand-cardBorder pb-4">
+                <div>
+                    <h2 class="text-2xl font-extrabold text-white tracking-tight flex items-center gap-2">
+                        <i class="fa-solid fa-shirt text-brand-purple"></i> Active Capes Collection
+                    </h2>
+                    <p class="text-xs text-gray-400 mt-1">Check out live prices, 3-day promo deals, and stock status.</p>
+                </div>
+                
+                <div class="flex items-center gap-2 text-xs font-mono">
+                    <span id="inStockBadgeCount" class="bg-green-500/10 border border-green-500/30 text-green-400 px-3 py-1 rounded-lg">
+                        In Stock: 3
+                    </span>
+                    <span id="outStockBadgeCount" class="bg-red-500/10 border border-red-500/30 text-red-400 px-3 py-1 rounded-lg">
+                        Out of Stock: 2
+                    </span>
+                </div>
+            </div>
+
+            <!-- GRID CONTAINER FOR CAPES -->
+            <div id="capesGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Items populated via JS -->
+            </div>
+        </section>
+
+        <!-- INFORMATION & DISCORD QUICK LINKS -->
+        <section class="bg-brand-cardBg border border-brand-cardBorder rounded-2xl p-6 sm:p-8 space-y-6">
+            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                <i class="fa-solid fa-circle-info text-brand-gold"></i> Quick Access & Discord Channels
+            </h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <!-- Principal Discord -->
+                <div class="bg-brand-darkBg/60 border border-brand-cardBorder p-4 rounded-xl space-y-2">
+                    <div class="w-8 h-8 rounded-lg bg-indigo-600/30 text-indigo-400 flex items-center justify-center font-bold text-sm">
+                        <i class="fa-brands fa-discord"></i>
+                    </div>
+                    <h4 class="font-bold text-white text-sm">Principal Discord Server</h4>
+                    <p class="text-xs text-gray-400">Join our main Discord server community.</p>
+                    <a href="https://discord.gg/gyr2mZ9DX" target="_blank" class="inline-block text-xs text-indigo-400 hover:underline pt-1">
+                        discord.gg/gyr2mZ9DX &rarr;
+                    </a>
+                </div>
+
+                <!-- Notifications Link -->
+                <div class="bg-brand-darkBg/60 border border-brand-cardBorder p-4 rounded-xl space-y-2">
+                    <div class="w-8 h-8 rounded-lg bg-brand-gold/30 text-brand-gold flex items-center justify-center font-bold text-sm">
+                        <i class="fa-solid fa-bell"></i>
+                    </div>
+                    <h4 class="font-bold text-white text-sm">Notifications Channel</h4>
+                    <p class="text-xs text-gray-400">Get instant updates on stock changes and restocks.</p>
+                    <a id="infoNotifLink" href="https://discord.com/channels/1537231983007109131/153723199406315942" target="_blank" class="inline-block text-xs text-brand-gold hover:underline pt-1">
+                        Go to Notifications &rarr;
+                    </a>
+                </div>
+
+                <!-- Buy Channel -->
+                <div class="bg-brand-darkBg/60 border border-brand-cardBorder p-4 rounded-xl space-y-2">
+                    <div class="w-8 h-8 rounded-lg bg-brand-neonRed/30 text-brand-neonRed flex items-center justify-center font-bold text-sm">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    <h4 class="font-bold text-white text-sm">Buy Channel</h4>
+                    <p class="text-xs text-gray-400">Open a ticket or buy directly from our Discord channel.</p>
+                    <a id="infoBuyLink" href="https://discord.com/channels/1537231983007109131/1546155929274421400" target="_blank" class="inline-block text-xs text-brand-neonRed hover:underline pt-1">
+                        Go to Buy Channel &rarr;
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ADMIN MODAL / PANEL (PROTECTED BY iyadiyad PASSWORD) -->
+        <section id="adminPanel" class="hidden bg-gradient-to-b from-brand-cardBg to-slate-950 border-2 border-brand-gold/60 rounded-2xl p-6 sm:p-8 space-y-6 shadow-2xl glow-effect-gold">
+            <div class="flex items-center justify-between border-b border-brand-cardBorder pb-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-brand-gold/20 border border-brand-gold flex items-center justify-center text-brand-gold">
+                        <i class="fa-solid fa-user-gear text-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-extrabold text-white">Live Admin Control Panel</h3>
+                        <p class="text-xs text-brand-gold">Authenticated with password `iyadiyad`</p>
+                    </div>
+                </div>
+                <button onclick="lockAdmin()" class="text-xs bg-red-600/20 hover:bg-red-600/40 text-red-300 border border-red-500/40 px-3 py-1.5 rounded-lg transition-all">
+                    <i class="fa-solid fa-lock"></i> Lock Admin
+                </button>
+            </div>
+
+            <!-- Edit Global Discord Links -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-brand-darkBg p-4 rounded-xl border border-brand-cardBorder">
+                <div class="space-y-1">
+                    <label class="text-xs font-semibold text-gray-300">Buy Channel Link</label>
+                    <input type="text" id="adminBuyLinkInput" class="w-full bg-brand-cardBg border border-brand-cardBorder text-white text-xs rounded-lg p-2.5 focus:border-brand-gold focus:outline-none" placeholder="https://discord.com/channels/...">
+                </div>
+                <div class="space-y-1">
+                    <label class="text-xs font-semibold text-gray-300">Notification Channel Link</label>
+                    <input type="text" id="adminNotifLinkInput" class="w-full bg-brand-cardBg border border-brand-cardBorder text-white text-xs rounded-lg p-2.5 focus:border-brand-gold focus:outline-none" placeholder="https://discord.com/channels/...">
+                </div>
+                <div class="md:col-span-2 text-right">
+                    <button onclick="saveGlobalLinks()" class="bg-brand-gold hover:bg-amber-500 text-black font-bold text-xs px-4 py-2 rounded-lg transition-all">
+                        Update Global Links
+                    </button>
+                </div>
+            </div>
+
+            <!-- Cape Editor Form -->
+            <div class="bg-brand-darkBg p-4 rounded-xl border border-brand-cardBorder space-y-4">
+                <h4 id="adminFormTitle" class="text-sm font-bold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-plus-circle text-green-400"></i> Add / Edit Cape Item
+                </h4>
+                <form id="capeForm" onsubmit="handleSaveCape(event)" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <input type="hidden" id="editingCapeId" value="">
+                    
+                    <div>
+                        <label class="text-xs text-gray-400">Cape Name</label>
+                        <input type="text" id="capeTitleInput" required placeholder="e.g. Home Cape" class="w-full bg-brand-cardBg border border-brand-cardBorder text-white text-xs rounded-lg p-2.5 mt-1 focus:border-brand-purple focus:outline-none">
+                    </div>
+
+                    <div>
+                        <label class="text-xs text-gray-400">Normal Price</label>
+                        <input type="text" id="capePriceInput" required placeholder="e.g. 10 Stack Red Block" class="w-full bg-brand-cardBg border border-brand-cardBorder text-white text-xs rounded-lg p-2.5 mt-1 focus:border-brand-purple focus:outline-none">
+                    </div>
+
+                    <div>
+                        <label class="text-xs text-gray-400">Promo Price (Optional)</label>
+                        <input type="text" id="capePromoInput" placeholder="e.g. Promo 3 days 7 stack Red Block" class="w-full bg-brand-cardBg border border-brand-cardBorder text-white text-xs rounded-lg p-2.5 mt-1 focus:border-brand-purple focus:outline-none">
+                    </div>
+
+                    <div>
+                        <label class="text-xs text-gray-400">Stock Status</label>
+                        <select id="capeStockInput" class="w-full bg-brand-cardBg border border-brand-cardBorder text-white text-xs rounded-lg p-2.5 mt-1 focus:border-brand-purple focus:outline-none">
+                            <option value="in_stock">In Stock (Available)</option>
+                            <option value="out_of_stock">Out from stock</option>
+                        </select>
+                    </div>
+
+                    <div class="sm:col-span-2 lg:col-span-4">
+                        <label for="capeImageInput" class="text-xs text-gray-400">Product Image (Import an image)</label>
+                        <input type="file" id="capeImageInput" accept="image/*"
+                            class="block w-full text-xs text-gray-300 mt-1 file:mr-3 file:py-2 file:px-3 file:rounded-lg file:border-0 file:bg-brand-purple file:text-white hover:file:bg-purple-600">
+                        <p class="text-[10px] text-gray-500 mt-1">Choose an image from your device. Recommended: under 1.5 MB.</p>
+                        <img id="capeImagePreview" alt="Product image preview"
+                            class="hidden mt-3 max-h-36 max-w-full rounded-xl border border-brand-cardBorder object-contain">
+                    </div>
+
+                    <div class="sm:col-span-2 lg:col-span-4 flex items-center justify-end gap-2">
+                        <button type="button" onclick="resetCapeForm()" class="bg-gray-700 hover:bg-gray-600 text-white text-xs px-4 py-2 rounded-lg transition-all">
+                            Cancel
+                        </button>
+                        <button type="submit" class="bg-gradient-to-r from-brand-purple to-indigo-600 hover:from-purple-600 hover:to-indigo-500 text-white font-bold text-xs px-6 py-2 rounded-lg transition-all shadow-lg">
+                            Save Item
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Product Management: available only inside the authenticated Admin Panel -->
+            <div class="bg-brand-darkBg p-4 rounded-xl border border-brand-cardBorder space-y-4">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <div>
+                        <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-boxes-stacked text-brand-gold"></i> Product Management
+                        </h4>
+                        <p class="text-xs text-gray-400 mt-1">Manage or remove products from the store catalog.</p>
+                    </div>
+                    <button type="button" onclick="deleteAllCapes()" class="bg-red-600/20 hover:bg-red-600/30 text-red-300 border border-red-500/40 text-xs font-bold px-4 py-2 rounded-lg transition-all">
+                        <i class="fa-solid fa-trash-can"></i> Delete All Products
+                    </button>
+                </div>
+                <div id="adminProductsList" class="space-y-2">
+                    <!-- Product list populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-brand-cardBorder bg-brand-darkBg py-8 px-4 sm:px-8">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+            <div>
+                <p class="text-sm font-bold text-white flex items-center justify-center md:justify-start gap-2">
+                    Detective Cape Store 
+                    <span class="text-xs text-gray-500 font-normal">| Branch 2 of Detective Shop</span>
+                </p>
+                <p class="text-xs text-gray-400 mt-1">
+                    Specialized Minecraft Capes Catalog.
+                </p>
+            </div>
+
+            <div class="text-center md:text-right space-y-1">
+                <p class="pixel-font text-xs text-brand-gold tracking-widest uppercase">Good luck !</p>
+                <p class="text-xs text-gray-400">Owner: <span class="text-purple-300 font-semibold">Detectiivve</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PASSWORD PROMPT MODAL -->
+    <div id="authModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-brand-cardBg border border-brand-purple/50 rounded-2xl p-6 sm:p-8 max-w-sm w-full space-y-4 shadow-2xl relative glow-effect">
+            <button onclick="closeAuthModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div class="text-center space-y-2">
+                <div class="w-12 h-12 rounded-full bg-brand-purple/20 text-brand-purple flex items-center justify-center mx-auto text-xl border border-brand-purple/40">
+                    <i class="fa-solid fa-key"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white">Admin Password</h3>
+                <p class="text-xs text-gray-400">Enter password to unlock live editor.</p>
+            </div>
+
+            <form onsubmit="verifyAdminPassword(event)" class="space-y-4">
+                <div>
+                    <input type="password" id="adminPasswordInput" placeholder="Enter password..." required
+                           class="w-full bg-brand-darkBg border border-brand-cardBorder text-white text-center text-sm rounded-xl p-3 focus:border-brand-gold focus:outline-none">
+                    <p id="authErrorMsg" class="text-xs text-red-500 hidden mt-1 text-center font-medium">
+                        Incorrect password!
+                    </p>
+                </div>
+
+                <button type="submit" class="w-full py-3 bg-gradient-to-r from-brand-purple to-brand-neonRed hover:opacity-90 text-white font-bold text-sm rounded-xl shadow-lg transition-all">
+                    Unlock Admin Panel
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        const DEFAULT_BUY_LINK = "https://discord.com/channels/1537231983007109131/1546155929274421400";
+        const DEFAULT_NOTIF_LINK = "https://discord.com/channels/1537231983007109131/153723199406315942";
+
+        const DEFAULT_CAPES = [
+            {
+                id: "1",
+                title: "Home Cape",
+                price: "10 Stack Red Block",
+                promo: "Promo 3 days 7 stack Red Block",
+                status: "in_stock"
+            },
+            {
+                id: "2",
+                title: "Menace Cape",
+                price: "20 Stack Red Block",
+                promo: "Promo 3 days 15 Stack Red Block",
+                status: "in_stock"
+            },
+            {
+                id: "3",
+                title: "Aurora Cape",
+                price: "8 Stack Red Block",
+                promo: "Promo 3 days 6 stack Red Block",
+                status: "in_stock"
+            },
+            {
+                id: "4",
+                title: "Builder Cape",
+                price: "Custom Trade",
+                promo: "",
+                status: "out_of_stock"
+            },
+            {
+                id: "5",
+                title: "Copper Cape",
+                price: "Custom Trade",
+                promo: "",
+                status: "out_of_stock"
+            }
+        ];
+
+        let capesData = [];
+        let buyLink = DEFAULT_BUY_LINK;
+        let notifLink = DEFAULT_NOTIF_LINK;
+        let isAdminLoggedIn = false;
+        let selectedCapeImage = "";
+
+        window.onload = function() {
+            loadStoredData();
+            renderLinks();
+            renderCapes();
+
+            document.getElementById('capeImageInput').addEventListener('change', handleCapeImageSelect);
+        };
+
+        function handleCapeImageSelect(event) {
+            const file = event.target.files && event.target.files[0];
+            if (!file) return;
+
+            if (!file.type.startsWith('image/')) {
+                alert('Please choose an image file.');
+                event.target.value = '';
+                return;
+            }
+            if (file.size > 1.5 * 1024 * 1024) {
+                alert('Please choose an image smaller than 1.5 MB so it can be saved in this browser.');
+                event.target.value = '';
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function() {
+                selectedCapeImage = reader.result;
+                const preview = document.getElementById('capeImagePreview');
+                preview.src = selectedCapeImage;
+                preview.classList.remove('hidden');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function loadStoredData() {
+            const savedCapes = localStorage.getItem('detective_capes_list');
+            if (savedCapes) {
+                try {
+                    capesData = JSON.parse(savedCapes);
+                } catch(e) {
+                    capesData = DEFAULT_CAPES;
+                }
+            } else {
+                capesData = DEFAULT_CAPES;
+            }
+
+            const savedBuy = localStorage.getItem('detective_buy_link');
+            if (savedBuy) buyLink = savedBuy;
+
+            const savedNotif = localStorage.getItem('detective_notif_link');
+            if (savedNotif) notifLink = savedNotif;
+        }
+
+        function saveData() {
+            localStorage.setItem('detective_capes_list', JSON.stringify(capesData));
+            localStorage.setItem('detective_buy_link', buyLink);
+            localStorage.setItem('detective_notif_link', notifLink);
+        }
+
+        function renderLinks() {
+            document.getElementById('navBuyLink').href = buyLink;
+            document.getElementById('infoBuyLink').href = buyLink;
+            document.getElementById('navNotificationLink').href = notifLink;
+            document.getElementById('infoNotifLink').href = notifLink;
+
+            document.getElementById('adminBuyLinkInput').value = buyLink;
+            document.getElementById('adminNotifLinkInput').value = notifLink;
+        }
+
+        function renderCapes() {
+            const grid = document.getElementById('capesGrid');
+            grid.innerHTML = '';
+
+            let inStockCount = 0;
+            let outStockCount = 0;
+
+            capesData.forEach(cape => {
+                const isInStock = cape.status === 'in_stock';
+                if (isInStock) inStockCount++; else outStockCount++;
+
+                const card = document.createElement('div');
+                card.className = `bg-brand-cardBg border border-brand-cardBorder rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:border-brand-purple/60 hover:-translate-y-1 shadow-xl relative group`;
+
+                card.innerHTML = `
+                    ${cape.promo ? `<div class="absolute top-3 left-3 z-10 bg-gradient-to-r from-brand-neonRed to-red-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-lg flex items-center gap-1">
+                        <i class="fa-solid fa-fire text-brand-gold"></i> PROMO OFFER
+                    </div>` : ''}
+
+                    <div class="absolute top-3 right-3 z-10">
+                        ${isInStock 
+                            ? `<span class="bg-green-500/10 border border-green-500/30 text-green-400 text-[10px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1">
+                                <span class="w-1.5 h-1.5 rounded-full bg-green-400"></span> In Stock
+                               </span>`
+                            : `<span class="bg-red-500/10 border border-red-500/30 text-red-400 text-[10px] font-bold px-2.5 py-1 rounded-full">
+                                Out from stock
+                               </span>`
+                        }
+                    </div>
+
+                    <div class="p-6 bg-gradient-to-b from-brand-darkBg to-transparent flex flex-col items-center justify-center border-b border-brand-cardBorder/50 relative">
+                        <div class="w-full min-h-32 flex items-center justify-center my-2">
+                            ${cape.image
+                                ? `<img src="${escapeHtml(cape.image)}" alt="${escapeHtml(cape.title)}" class="max-h-40 max-w-full object-contain rounded-xl drop-shadow-2xl transition-transform duration-300 group-hover:scale-105">`
+                                : `<div class="w-24 h-32 relative flex items-center justify-center">
+                                    <svg class="w-full h-full drop-shadow-2xl transition-transform duration-300 group-hover:scale-105" viewBox="0 0 60 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="10" y="5" width="40" height="70" rx="4" fill="${getCapeColor(cape.title, cape.status)}" stroke="#292246" stroke-width="2"/>
+                                        <path d="M20 20 L40 20 L30 40 Z" fill="rgba(255,255,255,0.15)"/>
+                                        <circle cx="30" cy="30" r="6" fill="#f59e0b" opacity="0.8"/>
+                                    </svg>
+                                </div>`
+                            }
+                        </div>
+                        <h3 class="text-lg font-bold text-white mt-2">${escapeHtml(cape.title)}</h3>
+                    </div>
+
+                    <div class="p-5 space-y-4 flex-grow flex flex-col justify-between">
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between text-xs">
+                                <span class="text-gray-400">Normal Price:</span>
+                                <span class="font-mono text-white font-semibold flex items-center gap-1">
+                                    <i class="fa-solid fa-cube text-brand-neonRed redstone-pulse text-xs"></i>
+                                    ${escapeHtml(cape.price)}
+                                </span>
+                            </div>
+
+                            ${cape.promo ? `
+                                <div class="bg-brand-neonRed/10 border border-brand-neonRed/30 p-2.5 rounded-xl space-y-1">
+                                    <div class="text-[10px] text-brand-neonRed font-bold uppercase tracking-wider">Special Offer</div>
+                                    <div class="text-xs font-mono text-white font-bold flex items-center gap-1">
+                                        <i class="fa-solid fa-tags text-brand-gold"></i> ${escapeHtml(cape.promo)}
+                                    </div>
+                                </div>
+                            ` : ''}
+                        </div>
+
+                        <div class="space-y-2 pt-2">
+                            ${isInStock 
+                                ? `<a href="${buyLink}" target="_blank" rel="noopener noreferrer" 
+                                      class="w-full py-2.5 px-4 bg-gradient-to-r from-brand-purple to-indigo-600 hover:from-purple-600 hover:to-indigo-500 text-white font-bold text-xs rounded-xl shadow-lg flex items-center justify-center gap-2 transition-all">
+                                      <i class="fa-brands fa-discord"></i> Buy on Discord
+                                   </a>`
+                                : `<button disabled class="w-full py-2.5 px-4 bg-gray-800/60 border border-gray-700/50 text-gray-500 font-bold text-xs rounded-xl cursor-not-allowed">
+                                      Out from stock
+                                   </button>`
+                            }
+
+
+                        </div>
+                    </div>
+                `;
+
+                grid.appendChild(card);
+            });
+
+            document.getElementById('inStockBadgeCount').innerText = `In Stock: ${inStockCount}`;
+            document.getElementById('outStockBadgeCount').innerText = `Out of Stock: ${outStockCount}`;
+            renderAdminProducts();
+        }
+
+        function renderAdminProducts() {
+            const list = document.getElementById('adminProductsList');
+            if (!list) return;
+
+            if (!isAdminLoggedIn) {
+                list.innerHTML = '';
+                return;
+            }
+
+            if (capesData.length === 0) {
+                list.innerHTML = '<p class="text-xs text-gray-400 text-center py-4">No products in the store.</p>';
+                return;
+            }
+
+            list.innerHTML = capesData.map(cape => `
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-brand-cardBg border border-brand-cardBorder rounded-xl p-3">
+                    <div class="min-w-0">
+                        <p class="text-sm font-bold text-white truncate">${escapeHtml(cape.title || 'Untitled product')}</p>
+                        <p class="text-[11px] text-gray-400 mt-1">
+                            ${escapeHtml(cape.price || '')}
+                            <span class="mx-1">•</span>
+                            ${cape.status === 'in_stock' ? '<span class="text-green-400">In Stock</span>' : '<span class="text-red-400">Out of Stock</span>'}
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-2 shrink-0">
+                        <button type="button" onclick="editCape('${String(cape.id).replace(/'/g, "\\'")}')" class="px-3 py-2 bg-brand-gold/20 hover:bg-brand-gold/30 text-brand-gold border border-brand-gold/40 text-[11px] font-bold rounded-lg transition-all">
+                            <i class="fa-solid fa-pen"></i> Edit
+                        </button>
+                        <button type="button" onclick="deleteCape('${String(cape.id).replace(/'/g, "\\'")}')" class="px-3 py-2 bg-red-600/20 hover:bg-red-600/30 text-red-300 border border-red-500/40 text-[11px] font-bold rounded-lg transition-all">
+                            <i class="fa-solid fa-trash"></i> Delete
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function getCapeColor(title, status) {
+            if (status === 'out_of_stock') return '#374151';
+            const t = title.toLowerCase();
+            if (t.includes('home')) return '#991b1b';
+            if (t.includes('menace')) return '#581c87';
+            if (t.includes('aurora')) return '#0e7490';
+            if (t.includes('builder')) return '#b45309';
+            if (t.includes('copper')) return '#c2410c';
+            return '#4c1d95';
+        }
+
+        function handleAdminAuth() {
+            if (isAdminLoggedIn) {
+                document.getElementById('adminPanel').scrollIntoView({ behavior: 'smooth' });
+            } else {
+                document.getElementById('authModal').classList.remove('hidden');
+                document.getElementById('adminPasswordInput').focus();
+            }
+        }
+
+        function closeAuthModal() {
+            document.getElementById('authModal').classList.add('hidden');
+            document.getElementById('authErrorMsg').classList.add('hidden');
+            document.getElementById('adminPasswordInput').value = '';
+        }
+
+        function verifyAdminPassword(e) {
+            e.preventDefault();
+            const inputPass = document.getElementById('adminPasswordInput').value;
+            
+            if (inputPass === 'iyadiyad') {
+                isAdminLoggedIn = true;
+                closeAuthModal();
+                document.getElementById('adminPanel').classList.remove('hidden');
+                renderCapes();
+                renderAdminProducts();
+                document.getElementById('adminPanel').scrollIntoView({ behavior: 'smooth' });
+            } else {
+                document.getElementById('authErrorMsg').classList.remove('hidden');
+            }
+        }
+
+        function lockAdmin() {
+            isAdminLoggedIn = false;
+            document.getElementById('adminPanel').classList.add('hidden');
+            renderCapes();
+        }
+
+        function handleSaveCape(e) {
+            e.preventDefault();
+            if (!isAdminLoggedIn) {
+                alert('Please unlock the Admin Panel first.');
+                return;
+            }
+            const editingId = document.getElementById('editingCapeId').value;
+            const title = document.getElementById('capeTitleInput').value.trim();
+            const price = document.getElementById('capePriceInput').value.trim();
+            const promo = document.getElementById('capePromoInput').value.trim();
+            const status = document.getElementById('capeStockInput').value;
+
+            if (editingId) {
+                const index = capesData.findIndex(c => c.id === editingId);
+                if (index !== -1) {
+                    capesData[index] = {
+                        ...capesData[index], title, price, promo, status,
+                        image: selectedCapeImage || capesData[index].image || ""
+                    };
+                }
+            } else {
+                capesData.push({
+                    id: Date.now().toString(),
+                    title,
+                    price,
+                    promo,
+                    status,
+                    image: selectedCapeImage
+                });
+            }
+
+            saveData();
+            renderCapes();
+            resetCapeForm();
+        }
+
+        function editCape(id) {
+            if (!isAdminLoggedIn) {
+                alert('Please unlock the Admin Panel first.');
+                return;
+            }
+            const cape = capesData.find(c => c.id === id);
+            if (!cape) return;
+
+            document.getElementById('editingCapeId').value = cape.id;
+            document.getElementById('capeTitleInput').value = cape.title;
+            document.getElementById('capePriceInput').value = cape.price;
+            document.getElementById('capePromoInput').value = cape.promo || '';
+            document.getElementById('capeStockInput').value = cape.status;
+            selectedCapeImage = cape.image || "";
+            const preview = document.getElementById('capeImagePreview');
+            if (selectedCapeImage) {
+                preview.src = selectedCapeImage;
+                preview.classList.remove('hidden');
+            } else {
+                preview.removeAttribute('src');
+                preview.classList.add('hidden');
+            }
+            document.getElementById('capeImageInput').value = '';
+
+            document.getElementById('adminFormTitle').innerHTML = `<i class="fa-solid fa-pen text-brand-gold"></i> Edit Cape: ${escapeHtml(cape.title)}`;
+            document.getElementById('adminPanel').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function deleteCape(id) {
+            if (!isAdminLoggedIn) {
+                alert('Please unlock the Admin Panel first.');
+                return;
+            }
+
+            const cape = capesData.find(c => c.id === id);
+            if (!cape) return;
+
+            if (!confirm(`Are you sure you want to delete "${cape.title}"? This action cannot be undone.`)) {
+                return;
+            }
+
+            capesData = capesData.filter(c => c.id !== id);
+            saveData();
+            renderCapes();
+        }
+
+        function deleteAllCapes() {
+            if (!isAdminLoggedIn) {
+                alert('Please unlock the Admin Panel first.');
+                return;
+            }
+
+            if (capesData.length === 0) {
+                alert('There are no products to delete.');
+                return;
+            }
+
+            if (!confirm(`Are you sure you want to delete ALL ${capesData.length} products? This action cannot be undone.`)) {
+                return;
+            }
+
+            capesData = [];
+            saveData();
+            resetCapeForm();
+            renderCapes();
+            alert('All products have been deleted.');
+        }
+
+        function resetCapeForm() {
+            document.getElementById('editingCapeId').value = '';
+            document.getElementById('capeForm').reset();
+            selectedCapeImage = "";
+            const preview = document.getElementById('capeImagePreview');
+            preview.removeAttribute('src');
+            preview.classList.add('hidden');
+            document.getElementById('adminFormTitle').innerHTML = `<i class="fa-solid fa-plus-circle text-green-400"></i> Add / Edit Cape Item`;
+        }
+
+        function saveGlobalLinks() {
+            if (!isAdminLoggedIn) {
+                alert('Please unlock the Admin Panel first.');
+                return;
+            }
+            buyLink = document.getElementById('adminBuyLinkInput').value.trim() || DEFAULT_BUY_LINK;
+            notifLink = document.getElementById('adminNotifLinkInput').value.trim() || DEFAULT_NOTIF_LINK;
+            saveData();
+            renderLinks();
+            renderCapes();
+        }
+
+        function escapeHtml(str) {
+            return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+        }
+    </script>
+</body>
+</html>
